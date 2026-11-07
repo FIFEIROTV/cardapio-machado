@@ -175,7 +175,6 @@
             background-color: var(--primary-dark);
         }
 
-        /* Carrinho Flutuante */
         .cart-float {
             position: fixed;
             bottom: 0;
@@ -220,7 +219,6 @@
             background-color: #1ebe5d;
         }
 
-        /* Modal do Carrinho */
         .modal {
             display: none;
             position: fixed;
@@ -317,7 +315,6 @@
         <!-- Gerado via JavaScript -->
     </div>
 
-    <!-- Barra de Carrinho Flutuante -->
     <div class="cart-float">
         <div class="cart-info">
             <span>Itens: <span id="cart-count">0</span></span> | 
@@ -326,16 +323,13 @@
         <button class="btn-checkout" onclick="openCartModal()">Ver Carrinho / Pedir</button>
     </div>
 
-    <!-- Modal de Fechamento de Pedido -->
     <div class="modal" id="cart-modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Seu Pedido</h2>
                 <button class="close-modal" onclick="closeCartModal()">&times;</button>
             </div>
-            <div class="cart-items-list" id="cart-items-list">
-                <!-- Itens do carrinho -->
-            </div>
+            <div class="cart-items-list" id="cart-items-list"></div>
             <div style="font-weight: bold; text-align: right; margin-bottom: 15px; font-size: 1.1rem;">
                 Total: R$ <span id="modal-total">0.00</span>
             </div>
@@ -389,70 +383,4 @@
                 category: "🥤 Refrigerantes & Bebidas",
                 items: [
                     { id: 8, name: "Vedete 2L", price: 10.00, desc: "Refrigerante 2 Litros", stock: 6, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" },
-                    { id: 9, name: "Coca-Cola 2L", price: 16.00, desc: "Refrigerante 2 Litros", stock: 8, img: "https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=500&q=80" },
-                    { id: 10, name: "Kuat 2L", price: 10.00, desc: "Refrigerante 2 Litros", stock: 5, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" },
-                    { id: 11, name: "Coca-Cola 1L", price: 10.00, desc: "Refrigerante 1 Litro", stock: 7, img: "https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=500&q=80" },
-                    { id: 12, name: "Coca-Cola Lata", price: 7.00, desc: "Lata 350ml", stock: 15, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" },
-                    { id: 13, name: "Guaraná 200ml", price: 3.00, desc: "Garrafinha 200ml", stock: 10, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" },
-                    { id: 14, name: "Coca-Cola 200ml", price: 3.00, desc: "Garrafinha 200ml", stock: 10, img: "https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=500&q=80" }
-                ]
-            },
-            {
-                category: "🍻 Cervejas",
-                items: [
-                    { id: 15, name: "Skol Lata", price: 6.00, desc: "Lata 350ml", stock: 20, img: "https://images.unsplash.com/photo-1608270105740-267812f8668d?auto=format&fit=crop&w=500&q=80" },
-                    { id: 16, name: "Brahma Lata", price: 6.00, desc: "Lata 350ml", stock: 20, img: "https://images.unsplash.com/photo-1608270105740-267812f8668d?auto=format&fit=crop&w=500&q=80" },
-                    { id: 17, name: "Cristal Lata", price: 5.00, desc: "Lata 350ml", stock: 15, img: "https://images.unsplash.com/photo-1608270105740-267812f8668d?auto=format&fit=crop&w=500&q=80" },
-                    { id: 18, name: "Skol Garrafinha", price: 5.00, desc: "Retornável pequena", stock: 12, img: "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500&q=80" },
-                    { id: 19, name: "Brahma Garrafinha", price: 5.00, desc: "Retornável pequena", stock: 12, img: "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500&q=80" },
-                    { id: 20, name: "Skol 600ml", price: 10.00, desc: "Garrafa Grande", stock: 10, img: "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500&q=80" },
-                    { id: 21, name: "Brahma 600ml", price: 10.00, desc: "Garrafa Grande", stock: 10, img: "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500&q=80" }
-                ]
-            },
-            {
-                category: "🍹 Copões / Drinks",
-                items: [
-                    { id: 22, name: "Black Blend", price: 10.00, desc: "Copão preparado", stock: 10, img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=500&q=80" },
-                    { id: 23, name: "Chevette", price: 12.00, desc: "Copão preparado", stock: 10, img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" },
-                    { 
-                        id: 24, name: "Sabores Tradicionais (Gin)", price: 14.00, desc: "Escolha o sabor abaixo",
-                        options: ["Morango", "Melancia", "Maçã Verde", "Tropical"],
-                        stock: 15,
-                        img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=500&q=80"
-                    },
-                    { 
-                        id: 25, name: "Passaporte", price: 18.00, desc: "Tradicional ou turbinado",
-                        options: ["Tradicional - R$ 18,00", "Com Mango Loco ou Red Bull - R$ 33,00"],
-                        prices: [18.00, 33.00],
-                        stock: 8,
-                        img: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=500&q=80"
-                    },
-                    { id: 26, name: "Busca Brisa", price: 22.00, desc: "Copão preparado", stock: 6, img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=500&q=80" },
-                    { 
-                        id: 27, name: "Cavalo Branco", price: 25.00, desc: "Tradicional ou turbinado",
-                        options: ["Tradicional - R$ 25,00", "Com Mango Loco ou Red Bull - R$ 40,00"],
-                        prices: [25.00, 40.00],
-                        stock: 5,
-                        img: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=500&q=80"
-                    },
-                    { 
-                        id: 28, name: "Red Label", price: 35.00, desc: "Tradicional ou turbinado",
-                        options: ["Tradicional - R$ 35,00", "Com Red Bull ou Monster - R$ 50,00"],
-                        prices: [35.00, 50.00],
-                        stock: 4,
-                        img: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=500&q=80"
-                    }
-                ]
-            },
-            {
-                category: "🍫 Doces & Snacks",
-                items: [
-                    { id: 29, name: "KitKat", price: 5.00, desc: "Chocolate", stock: 10, img: "https://images.unsplash.com/photo-1582293041029-7986f03cb02a?auto=format&fit=crop&w=500&q=80" },
-                    { 
-                        id: 30, name: "Trento", price: 4.00, desc: "Sabor Tradicional (Vermelho)",
-                        stock: 12,
-                        img: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=500&q=80"
-                    },
-                    { id: 31, name: "Ouro Branco", price: 2.00, desc: "Bombom", stock: 15, img: "https://images.unsplash.com/photo-1582293041029-7986f03cb02a?auto=format&fit=crop&w=500&q=80" },
-                    { id: 32, name: "Paçoca", price: 1.00, desc: "Doce de amendoim", stock: 20, img: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=500&q=80" },
-                    { id: 33, name: "Moranguete", price: 2.00, desc: "Chocolate com recheio", stock: 10, img: "
+                    { id: 9, name: "Coca-Cola 2L", price: 16.00, desc: "Refrigerante 2 Litros", stock: 8, img: "
