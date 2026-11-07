@@ -14,306 +14,49 @@
             --accent: #ffa502;
             --card-bg: #2b2b36;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--darker);
-            color: var(--light);
-            padding-bottom: 120px;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--dark), var(--darker));
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--primary);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-
-        header h1 {
-            color: var(--accent);
-            font-size: 2rem;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            color: #ddd;
-            font-size: 0.95rem;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 0 15px;
-        }
-
-        .category-title {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin: 30px 0 15px 0;
-            border-bottom: 2px solid var(--card-bg);
-            padding-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .items-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
-        }
-
-        .item-card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .item-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(255,165,2,0.3);
-        }
-
-        .item-img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            background-color: #1e1e24;
-        }
-
-        .item-content {
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
-        }
-
-        .item-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .item-price {
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .item-desc {
-            font-size: 0.85rem;
-            color: #aaa;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        .item-stock {
-            font-size: 0.75rem;
-            color: #2ed573;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .item-options {
-            margin-bottom: 12px;
-        }
-
-        .item-options label {
-            font-size: 0.8rem;
-            color: var(--accent);
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        .item-options select {
-            width: 100%;
-            padding: 6px;
-            border-radius: 6px;
-            background: #1e1e24;
-            color: #fff;
-            border: 1px solid #444;
-            font-size: 0.85rem;
-        }
-
-        .btn-add {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-            width: 100%;
-            text-align: center;
-        }
-
-        .btn-add:hover {
-            background-color: var(--primary-dark);
-        }
-
-        .cart-float {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--dark);
-            border-top: 3px solid var(--accent);
-            padding: 15px 20px;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.6);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .cart-info {
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .cart-total {
-            color: var(--accent);
-        }
-
-        .btn-checkout {
-            background-color: #25d366;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-
-        .btn-checkout:hover {
-            background-color: #1ebe5d;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-        }
-
-        .modal-content {
-            background: var(--card-bg);
-            width: 100%;
-            max-width: 500px;
-            border-radius: 12px;
-            padding: 20px;
-            max-height: 90vh;
-            overflow-y: auto;
-            border: 1px solid #444;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #444;
-            padding-bottom: 10px;
-        }
-
-        .close-modal {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .cart-items-list {
-            margin-bottom: 15px;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-
-        .cart-item-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.9rem;
-        }
-
-        .form-group {
-            margin-bottom: 12px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            margin-bottom: 4px;
-            color: #ccc;
-        }
-
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 8px;
-            border-radius: 6px;
-            background: #1e1e24;
-            color: #fff;
-            border: 1px solid #444;
-        }
-
-        .badge-destaque {
-            background: var(--primary);
-            color: white;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            vertical-align: middle;
-            margin-left: 5px;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--darker); color: var(--light); padding-bottom: 120px; }
+        header { background: linear-gradient(135deg, var(--dark), var(--darker)); padding: 25px 20px; text-align: center; border-bottom: 4px solid var(--primary); }
+        header h1 { color: var(--accent); font-size: 2rem; margin-bottom: 5px; text-transform: uppercase; }
+        header p { color: #ddd; font-size: 0.95rem; }
+        .container { max-width: 900px; margin: 20px auto; padding: 0 15px; }
+        .category-title { color: var(--accent); font-size: 1.5rem; margin: 30px 0 15px 0; border-bottom: 2px solid var(--card-bg); padding-bottom: 5px; }
+        .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+        .item-card { background-color: var(--card-bg); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.05); }
+        .item-img { width: 100%; height: 140px; object-fit: cover; background-color: #1e1e24; }
+        .item-content { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+        .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+        .item-title { font-size: 1.1rem; font-weight: bold; color: #fff; }
+        .item-price { color: var(--accent); font-weight: bold; font-size: 1.1rem; }
+        .item-desc { font-size: 0.85rem; color: #aaa; margin-bottom: 8px; line-height: 1.4; }
+        .item-stock { font-size: 0.75rem; color: #2ed573; font-weight: bold; margin-bottom: 10px; }
+        .item-options { margin-bottom: 12px; }
+        .item-options label { font-size: 0.8rem; color: var(--accent); display: block; margin-bottom: 3px; }
+        .item-options select { width: 100%; padding: 6px; border-radius: 6px; background: #1e1e24; color: #fff; border: 1px solid #444; font-size: 0.85rem; }
+        .btn-add { background-color: var(--primary); color: white; border: none; padding: 8px 12px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; text-align: center; }
+        .cart-float { position: fixed; bottom: 0; left: 0; right: 0; background: var(--dark); border-top: 3px solid var(--accent); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .cart-info { font-size: 1.1rem; font-weight: bold; }
+        .cart-total { color: var(--accent); }
+        .btn-checkout { background-color: #25d366; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; font-size: 1rem; cursor: pointer; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center; padding: 15px; }
+        .modal-content { background: var(--card-bg); width: 100%; max-width: 500px; border-radius: 12px; padding: 20px; max-height: 90vh; overflow-y: auto; border: 1px solid #444; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 10px; }
+        .close-modal { background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+        .cart-items-list { margin-bottom: 15px; max-height: 200px; overflow-y: auto; }
+        .cart-item-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 0.85rem; margin-bottom: 4px; color: #ccc; }
+        .form-group input, .form-group select { width: 100%; padding: 8px; border-radius: 6px; background: #1e1e24; color: #fff; border: 1px solid #444; }
+        .badge-destaque { background: var(--primary); color: white; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-left: 5px; }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Lanches Família Machado</h1>
         <p>Qualidade, Sabor e Muito Amor em Cada Lanche!</p>
     </header>
 
-    <div class="container" id="menu-container">
-        <!-- Gerado via JavaScript -->
-    </div>
+    <div class="container" id="menu-container"></div>
 
     <div class="cart-float">
         <div class="cart-info">
@@ -333,7 +76,6 @@
             <div style="font-weight: bold; text-align: right; margin-bottom: 15px; font-size: 1.1rem;">
                 Total: R$ <span id="modal-total">0.00</span>
             </div>
-            
             <div class="form-group">
                 <label>Seu Nome:</label>
                 <input type="text" id="client-name" placeholder="Digite seu nome completo">
@@ -357,7 +99,6 @@
                     <option value="Cartão">Cartão (Débito/Crédito)</option>
                 </select>
             </div>
-
             <button class="btn-checkout" style="width: 100%; justify-content: center; margin-top: 15px;" onclick="sendWhatsApp()">
                 Enviar Pedido pelo WhatsApp 🚀
             </button>
@@ -383,4 +124,166 @@
                 category: "🥤 Refrigerantes & Bebidas",
                 items: [
                     { id: 8, name: "Vedete 2L", price: 10.00, desc: "Refrigerante 2 Litros", stock: 6, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" },
-                    { id: 9, name: "Coca-Cola 2L", price: 16.00, desc: "Refrigerante 2 Litros", stock: 8, img: "
+                    { id: 9, name: "Coca-Cola 2L", price: 16.00, desc: "Refrigerante 2 Litros", stock: 8, img: "https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=500&q=80" },
+                    { id: 10, name: "Kuat 2L", price: 10.00, desc: "Refrigerante 2 Litros", stock: 5, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" },
+                    { id: 11, name: "Coca-Cola 1L", price: 10.00, desc: "Refrigerante 1 Litro", stock: 7, img: "https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=500&q=80" },
+                    { id: 12, name: "Coca-Cola Lata", price: 7.00, desc: "Lata 350ml", stock: 15, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" },
+                    { id: 13, name: "Guaraná 200ml", price: 3.00, desc: "Garrafinha 200ml", stock: 10, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" },
+                    { id: 14, name: "Coca-Cola 200ml", price: 3.00, desc: "Garrafinha 200ml", stock: 10, img: "https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=500&q=80" }
+                ]
+            },
+            {
+                category: "🍻 Cervejas",
+                items: [
+                    { id: 15, name: "Skol Lata", price: 6.00, desc: "Lata 350ml", stock: 20, img: "https://images.unsplash.com/photo-1608270105740-267812f8668d?auto=format&fit=crop&w=500&q=80" },
+                    { id: 16, name: "Brahma Lata", price: 6.00, desc: "Lata 350ml", stock: 20, img: "https://images.unsplash.com/photo-1608270105740-267812f8668d?auto=format&fit=crop&w=500&q=80" },
+                    { id: 17, name: "Cristal Lata", price: 5.00, desc: "Lata 350ml", stock: 15, img: "https://images.unsplash.com/photo-1608270105740-267812f8668d?auto=format&fit=crop&w=500&q=80" },
+                    { id: 18, name: "Skol Garrafinha", price: 5.00, desc: "Retornável pequena", stock: 12, img: "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500&q=80" },
+                    { id: 19, name: "Brahma Garrafinha", price: 5.00, desc: "Retornável pequena", stock: 12, img: "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500&q=80" },
+                    { id: 20, name: "Skol 600ml", price: 10.00, desc: "Garrafa Grande", stock: 10, img: "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500&q=80" },
+                    { id: 21, name: "Brahma 600ml", price: 10.00, desc: "Garrafa Grande", stock: 10, img: "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=500&q=80" }
+                ]
+            },
+            {
+                category: "🍹 Copões / Drinks",
+                items: [
+                    { id: 22, name: "Black Blend", price: 10.00, desc: "Copão preparado", stock: 10, img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=500&q=80" },
+                    { id: 23, name: "Chevette", price: 12.00, desc: "Copão preparado", stock: 10, img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" },
+                    { 
+                        id: 24, name: "Sabores Tradicionais (Gin)", price: 14.00, desc: "Escolha o sabor abaixo",
+                        options: ["Morango", "Melancia", "Maçã Verde", "Tropical"],
+                        stock: 15,
+                        img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=500&q=80"
+                    },
+                    { 
+                        id: 25, name: "Passaporte", price: 18.00, desc: "Tradicional ou turbinado",
+                        options: ["Tradicional - R$ 18,00", "Com Mango Loco ou Red Bull - R$ 33,00"],
+                        prices: [18.00, 33.00],
+                        stock: 8,
+                        img: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=500&q=80"
+                    },
+                    { id: 26, name: "Busca Brisa", price: 22.00, desc: "Copão preparado", stock: 6, img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=500&q=80" },
+                    { 
+                        id: 27, name: "Cavalo Branco", price: 25.00, desc: "Tradicional ou turbinado",
+                        options: ["Tradicional - R$ 25,00", "Com Mango Loco ou Red Bull - R$ 40,00"],
+                        prices: [25.00, 40.00],
+                        stock: 5,
+                        img: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=500&q=80"
+                    },
+                    { 
+                        id: 28, name: "Red Label", price: 35.00, desc: "Tradicional ou turbinado",
+                        options: ["Tradicional - R$ 35,00", "Com Red Bull ou Monster - R$ 50,00"],
+                        prices: [35.00, 50.00],
+                        stock: 4,
+                        img: "https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=500&q=80"
+                    }
+                ]
+            },
+            {
+                category: "🍫 Doces & Snacks",
+                items: [
+                    { id: 29, name: "KitKat", price: 5.00, desc: "Chocolate", stock: 10, img: "https://images.unsplash.com/photo-1582293041029-7986f03cb02a?auto=format&fit=crop&w=500&q=80" },
+                    { id: 30, name: "Trento", price: 4.00, desc: "Sabor Tradicional (Vermelho)", stock: 12, img: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=500&q=80" },
+                    { id: 31, name: "Ouro Branco", price: 2.00, desc: "Bombom", stock: 15, img: "https://images.unsplash.com/photo-1582293041029-7986f03cb02a?auto=format&fit=crop&w=500&q=80" },
+                    { id: 32, name: "Paçoca", price: 1.00, desc: "Doce de amendoim", stock: 20, img: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=500&q=80" },
+                    { id: 33, name: "Moranguete", price: 2.00, desc: "Chocolate com recheio", stock: 10, img: "https://images.unsplash.com/photo-1582293041029-7986f03cb02a?auto=format&fit=crop&w=500&q=80" },
+                    { id: 34, name: "Bala Yogurt", price: 0.20, desc: "Unidade", stock: 50, img: "https://images.unsplash.com/photo-1581098365948-6a5a912b7a49?auto=format&fit=crop&w=500&q=80" },
+                    { id: 35, name: "Halls Preto", price: 2.50, desc: "Pastilha refrescante", stock: 8, img: "https://images.unsplash.com/photo-1581098365948-6a5a912b7a49?auto=format&fit=crop&w=500&q=80" },
+                    { id: 36, name: "Trident (Azul)", price: 3.50, desc: "Goma de mascar", stock: 10, img: "https://images.unsplash.com/photo-1581098365948-6a5a912b7a49?auto=format&fit=crop&w=500&q=80" },
+                    { id: 37, name: "Trident (Verde)", price: 3.50, desc: "Goma de mascar", stock: 10, img: "https://images.unsplash.com/photo-1581098365948-6a5a912b7a49?auto=format&fit=crop&w=500&q=80" },
+                    { 
+                        id: 38, name: "Salgadinho Torcida", price: 3.50, desc: "Escolha o sabor:",
+                        options: ["Pimenta", "Cebola", "Bacon", "Costelinha com Limão", "Churrasco"],
+                        stock: 15,
+                        img: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=500&q=80"
+                    }
+                ]
+            }
+        ];
+
+        let cart = [];
+
+        function renderMenu() {
+            const container = document.getElementById('menu-container');
+            let html = '';
+            menuData.forEach(cat => {
+                html += `<div class="category-title">${cat.category}</div><div class="items-grid">`;
+                cat.items.forEach(item => {
+                    let badge = item.destaque ? `<span class="badge-destaque">${item.destaque}</span>` : '';
+                    let optionsHtml = item.options ? `<div class="item-options"><label>Opção / Sabor:</label><select id="opt-${item.id}">${item.options.map((opt, idx) => `<option value="${idx}">${opt}</option>`).join('')}</select></div>` : '';
+                    html += `
+                        <div class="item-card">
+                            <img src="${item.img}" alt="${item.name}" class="item-img">
+                            <div class="item-content">
+                                <div>
+                                    <div class="item-header">
+                                        <div class="item-title">${item.name} ${badge}</div>
+                                        <div class="item-price" id="price-${item.id}">R$ ${item.price.toFixed(2)}</div>
+                                    </div>
+                                    <div class="item-desc">${item.desc}</div>
+                                    <div class="item-stock">📦 Disponível: ${item.stock} un.</div>
+                                    ${optionsHtml}
+                                </div>
+                                <button class="btn-add" onclick="addToCart(${item.id})">Adicionar +</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function addToCart(itemId) {
+            let foundItem = null;
+            for (let cat of menuData) {
+                let it = cat.items.find(i => i.id === itemId);
+                if (it) { foundItem = it; break; }
+            }
+            if (!foundItem) return;
+            let finalPrice = foundItem.price;
+            let selectedOptionText = '';
+            if (foundItem.options) {
+                let selectElem = document.getElementById(`opt-${itemId}`);
+                let selectedIndex = selectElem.selectedIndex;
+                selectedOptionText = ` (${foundItem.options[selectedIndex]})`;
+                if (foundItem.prices) { finalPrice = foundItem.prices[selectedIndex]; }
+            }
+            let cartItemName = foundItem.name + selectedOptionText;
+            let existing = cart.find(i => i.name === cartItemName);
+            if (existing) { existing.quantity += 1; } else { cart.push({ name: cartItemName, price: finalPrice, quantity: 1 }); }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            let totalCount = 0, totalPrice = 0;
+            cart.forEach(item => { totalCount += item.quantity; totalPrice += item.price * item.quantity; });
+            document.getElementById('cart-count').innerText = totalCount;
+            document.getElementById('cart-total').innerText = totalPrice.toFixed(2);
+            document.getElementById('modal-total').innerText = totalPrice.toFixed(2);
+            let listHtml = '';
+            cart.forEach((item, index) => {
+                listHtml += `<div class="cart-item-row"><div>${item.quantity}x ${item.name}</div><div>R$ ${(item.price * item.quantity).toFixed(2)} <button onclick="removeItem(${index})" style="background:none; border:none; color:#ff4757; margin-left:8px; cursor:pointer; font-weight:bold;">✕</button></div></div>`;
+            });
+            document.getElementById('cart-items-list').innerHTML = listHtml || '<p style="color:#888; text-align:center;">Carrinho vazio</p>';
+        }
+
+        function removeItem(index) { cart.splice(index, 1); updateCartUI(); }
+        function openCartModal() { if (cart.length === 0) { alert('Seu carrinho está vazio!'); return; } document.getElementById('cart-modal').style.display = 'flex'; }
+        function closeCartModal() { document.getElementById('cart-modal').style.display = 'none'; }
+        function toggleAddress() { let type = document.getElementById('delivery-type').value; document.getElementById('address-group').style.display = type === 'Entrega' ? 'block' : 'none'; }
+        
+        function sendWhatsApp() {
+            let name = document.getElementById('client-name').value.trim();
+            if (!name) { alert('Por favor, digite o seu nome!'); return; }
+            let deliveryType = document.getElementById('delivery-type').value;
+            let address = document.getElementById('client-address').value.trim();
+            let payment = document.getElementById('payment-method').value;
+            if (deliveryType === 'Entrega' && !address) { alert('Por favor, informe o endereço de entrega!'); return; }
+            let message = `*🍕 NOVO PEDIDO - FAMÍLIA MACHADO*\n\n*Cliente:* ${name}\n*Tipo:* ${deliveryType}\n`;
+            if (deliveryType === 'Entrega') { message += `*Endereço:* ${address}\n`; }
+            message += `*Pagamento:* ${payment}\n\n*--- ITENS DO PEDIDO ---*\n`;
+            let total = 0;
+            cart.forEach(item => { message += `• ${item.quantity}x ${item.name} - R$ ${(item.price * item.quantity).toFixed(2)}\n`; total += item.price * item.quantity; });
+            message += `\n*TOTAL A PAGAR: R$ ${total.toFixed(2)}*`;
+            window.open(`https://wa.me/15996284744?text=` + encodeURIComponent(message),
